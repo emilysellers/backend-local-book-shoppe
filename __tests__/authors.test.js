@@ -15,8 +15,6 @@ describe('authors routes', () => {
     expect(res.body[0]).toEqual({
       id: expect.any(String),
       name: expect.any(String),
-      dob: expect.any(String),
-      pob: expect.any(String),
     });
   });
 
