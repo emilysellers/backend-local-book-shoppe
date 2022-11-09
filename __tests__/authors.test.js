@@ -24,7 +24,6 @@ describe('authors routes', () => {
     const res = await request(app).get('/authors/1');
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
-      id: '1',
       name: 'Kurt Vonnegut',
       dob: '1922',
       pob: 'Indianapolis, IN, USA',
