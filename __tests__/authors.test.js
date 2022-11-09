@@ -19,4 +19,31 @@ describe('authors routes', () => {
       pob: expect.any(String),
     });
   });
+
+  it('should return an author and their books', async () => {
+    const res = await request(app).get('/authors/1');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '1',
+      name: 'Kurt Vonnegut',
+      dob: 1922,
+      pob: 'Indianapolis, IN, USA',
+      books: [
+        {
+          id: '5',
+          title: 'Galapagos',
+          released: '1985',
+        },
+        {
+          id: '12',
+          title: 'Breakfast of Champions',
+          released: '1973',
+        },
+      ],
+    });
+  });
+
+  afterAll(() => {
+    pool.end();
+  });
 });
