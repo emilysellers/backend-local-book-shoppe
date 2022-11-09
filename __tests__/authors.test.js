@@ -26,18 +26,18 @@ describe('authors routes', () => {
     expect(res.body).toEqual({
       id: '1',
       name: 'Kurt Vonnegut',
-      dob: 1922,
+      dob: '1922',
       pob: 'Indianapolis, IN, USA',
       books: [
         {
-          id: '5',
+          id: 5,
           title: 'Galapagos',
-          released: '1985',
+          released: 1985,
         },
         {
-          id: '12',
+          id: 12,
           title: 'Breakfast of Champions',
-          released: '1973',
+          released: 1973,
         },
       ],
     });
